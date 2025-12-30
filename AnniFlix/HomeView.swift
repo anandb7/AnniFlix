@@ -11,29 +11,35 @@ struct HomeView: View {
     var heroTestTitle = Constants.testTitleURL
     
     var body: some View {
-        VStack{
-            AsyncImage(url: URL(string: heroTestTitle)){ image in
-                image
-                    .resizable()
-                    .scaledToFit()
-            } placeholder: {
-                ProgressView()
-            }
-            
-            HStack{
-                Button{
-                    
-                } label: {
-                    Text(Constants.playString)
-                        .ghostButton()
+        ScrollView {
+            VStack{
+                AsyncImage(url: URL(string: heroTestTitle)){ image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    ProgressView()
                 }
                 
-                Button{
+                HStack{
+                    Button{
+                        
+                    } label: {
+                        Text(Constants.playString)
+                            .ghostButton()
+                    }
                     
-                } label: {
-                    Text(Constants.downloadString)
-                        .ghostButton()
+                    Button{
+                        
+                    } label: {
+                        Text(Constants.downloadString)
+                            .ghostButton()
+                    }
                 }
+                HorizontalListView(header: Constants.trendingMovieString)
+                HorizontalListView(header: Constants.trendingTVString)
+                HorizontalListView(header: Constants.topRatedMovieString)
+                HorizontalListView(header: Constants.topRatedTVString)
             }
         }
     }
