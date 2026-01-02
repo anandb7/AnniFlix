@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var heroTestTitle = Constants.testTitleURL
     let viewModel = ViewModel()
-    
+     
     var body: some View {
         GeometryReader { geo in
             ScrollView(.vertical) {
@@ -19,6 +19,7 @@ struct HomeView: View {
                     EmptyView()
                 case .fetching:
                     ProgressView()
+                        .frame(width: geo.size.width, height: geo.size.height)
                 case .success:
                     LazyVStack {
                         AsyncImage(url: URL(string: heroTestTitle)){ image in
