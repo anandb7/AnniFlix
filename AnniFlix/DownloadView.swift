@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct DownloadView: View {
-    @Query var savedTitles: [Title]
+    @Query(sort: \Title.title) var savedTitles: [Title]
     
     var body: some View {
         NavigationStack {

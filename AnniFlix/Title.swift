@@ -4,6 +4,7 @@
 //
 //  Created by Anand Behara on 1/2/26.
 //
+
 import SwiftData
 
 struct TMDBAPIObject: Decodable {
@@ -12,7 +13,7 @@ struct TMDBAPIObject: Decodable {
 
 @Model
 class Title: Decodable, Identifiable, Hashable {
-    var id: Int?
+    @Attribute(.unique) var id: Int?
     var title: String?
     var name: String?
     var overview: String?
