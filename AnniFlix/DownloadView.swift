@@ -19,7 +19,7 @@ struct DownloadView: View {
                     .font(.title3)
                     .bold()
             } else {
-                VerticalListView(titles: savedTitles)
+                VerticalListView(titles: savedTitles, canDelete: true)
             }
         }
     }
